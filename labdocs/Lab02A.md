@@ -14,7 +14,7 @@ To get started with Designer, first you must create a pipeline and add the datas
 2. In the **Settings** pane, change the default pipeline name (**Pipeline-Created-on-*date***) to **Visual Diabetes Training** (if the **Settings** pane is not visible, click the **&#9881;** icon next to the pipeline name at the top).
 3. Note that you need to specify a compute target on which to run the pipeline. In the **Settings** pane, click **Select compute target** and select the **aml-cluster** compute target you created in the previous lab.
 4. On the left side of the designer, expand the **Datasets** section, and drag the **diabetes dataset** dataset you created in the previous exercise onto the canvas.
-5. Select the **diabetes dataset** module on the canvas, and view its settings. Then on the **outputs** tab, click the **Visualize** icon (which looks liks a bar chart).
+5. Select the **diabetes dataset** module on the canvas, and view its settings. Then on the **outputs** tab, click the **Visualize** icon (which looks liks a column chart).
 6. Review the schema of the data, noting that you can see the distributions of the various columns as histograms. Then close the visualization.
 
 ## Task 2: Add Transformations
@@ -61,7 +61,7 @@ With the data flow steps defined, you're now ready to run the training pipeline 
 
     **Tip**: While it's running, you can view the pipeline and experiment that have been created in the **Pipelines** and **Experiments** pages. Switch back to the **Visual Diabetes Training** pipeline on the **Designer** page when you're done.
 
-3. After the **Normalize Data** module has finished (indicated by a &#x2705; icon), select it, and in the **Settings** pane, on the **Outputs** tab, in the **Transformed dataset** section, click the **Visualize** icon (which looks like a column chart), and note that you can view statistics and distribution visualizations for the transformed columns.
+3. After the **Normalize Data** module has finished (indicated by a &#x2705; icon), select it, and in the **Settings** pane, on the **Outputs** tab, in the **Transformed dataset** section, click the **Visualize** icon, and note that you can view statistics and distribution visualizations for the transformed columns.
 4. Close the **Normalize Data** visualizations and wait for the rest of the modules to complete. Then visualize the **Evaluate Model** module to see the performance metrics for the model.
 
     **Note**: The performance of this model isn't all that great, partly because we performed only minimal feature engineering and pre-processing. You could try some different classification algorithms and compare the results (you can connect the outputs of the **Split Data** module to multiple **Train Model** and **Score Model** modules, and you can connect a second scored model to the **Evaluate Model** module to see a side-by-side comparison). The point of the exercise is simply to introduce you to the Designer interface, not to train a perfect model!
