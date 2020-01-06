@@ -81,7 +81,7 @@ Now you can test your deployed service from a client application - in this case,
 2. When the **predict-diabetes** endpoint opens, on the **Test** page, note the default test input parameters and then click **Test** to submit them to the deployed web service and generate a prediction.
 3. On the **Consume** tab, view the sample code that is provided for **Python**, and then copy the entire Python sample script to the clipboard.
 4. On the **Compute** page, if your compute instance is not yet running, wait for it to start. Then click its **Jupyter** link.
-5. In Jupyter, in the **DP100** folder, open **02B - Using the Visual Designer.ipynb**.
+5. In Jupyter, in the **Users/DP100** folder, open **02B - Using the Visual Designer.ipynb**.
 6. In the notebook, paste the code you copied into the empty code cell.
 7. Run the code cell and view the output returned by your web service.
 
