@@ -11,7 +11,7 @@ Before you start this lab, ensure that you have completed [Lab 1A](Lab01A.md) an
 In this lab, you will publish an inference pipeline as a containerized service in an Azure Kubernetes Service (AKS) cluster. An AKS cluster can take some time to initialize, so you'll start the process before preparing your inference pipeline.
 
 1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Compute** page for your workspace, review the existing compute targets under each tab. These should include:
-    * **Compute Instances**: The compute instance you created in aprevious lab.
+    * **Compute Instances**: The compute instance you created in a previous lab.
     * **Training Clusters**: The **aml-cluster** compute target you created in a previous lab].
     * **Inference Clusters**: None (yet!)
     * **Attached Compute**: None (this is where you could attach a virtual machine or Databricks cluster that exists outside of your workspace)
@@ -22,7 +22,7 @@ In this lab, you will publish an inference pipeline as a containerized service i
     * **Compute name**: aks-cluster
     * **Kubernetes Service**: Create new
     * **Region**: Any available region
-    * **Virtual Machine size**: Standard_D3_v2
+    * **Virtual Machine size**: Standard_D2_v2
     * **Cluster purpose**: Production
     * **Number of nodes**: 3
     * **Network configuration**: Basic
