@@ -21,9 +21,9 @@ In this lab, you will publish an inference pipeline as a containerized service i
 3. On the **Inference Clusters** tab, add a new cluster with the following settings:
     * **Compute name**: aks-cluster
     * **Kubernetes Service**: Create new
-    * **Region**: Any available region
-    * **Virtual Machine size**: Standard_D2_v2
-    * **Cluster purpose**: Production
+    * **Region**: *Any available region*
+    * **Virtual Machine size**: Standard_DS2_v2
+    * **Cluster purpose**: Dev-test
     * **Number of nodes**: 3
     * **Network configuration**: Basic
     * **Enable SSL configuration**: Unselected
