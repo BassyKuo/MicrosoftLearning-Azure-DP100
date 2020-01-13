@@ -1,6 +1,6 @@
 # Lab 8B: Using Automated Machine Learning
 
-Determining the right algorithm and preprocessing transformations for model training can involve a lot of guesswork experimentation.
+Determining the right algorithm and preprocessing transformations for model training can involve a lot of guesswork and experimentation.
 
 In this lab, you'll use automated machine learning to determine the optimal algorithm and preprocessing steps for a model by performing multiple training runs in parallel.
 
