@@ -59,3 +59,8 @@ You should complete the labs in order, following the instructions in each Markdo
 - [Lab 10B: Monitoring Data Drift](Lab10B.md)
 
 > **Important**: Remember to stop any virtual machines used in these labs when you no longer need them - this will minimize the Azure credit incurred for these services. When you have completed all of the labs, consider deleting the resource group you created if you don't plan to experiment with it any further.
+
+## Contributions
+
+At this time, we are not accepting external contributions to this repo. If you have suggestions or spot any errors, please report them as [issues](https://github.com/MicrosoftLearning/DP100/issues).
+
