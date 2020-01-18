@@ -1,4 +1,4 @@
-# Designing and Implementing an Azure Data Science Solution
+# DP-100: Designing and Implementing a Data Science Solution on Azure
 
 ## Course Labs
 
