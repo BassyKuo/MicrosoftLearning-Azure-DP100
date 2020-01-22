@@ -72,7 +72,7 @@ Now that you have a Python development environment, you can use the Azure Machin
 4. In Visual Studio Online, create a new file named **config.json** in the root folder of your VS Online workspace.
 5. Paste the copied configuration information into the new config.json file in your Visual Studio Online workspace, and save it.
 6. In Visual Studio Online, open the **01B - Intro to the Azure ML SDK.ipynb** notebook - this will be loaded in the Jupyter Notebook interface within Visual Studio Online. It may take a while to load the first time the Jupyter Notebooks interface is used, and you may briefly see two panes - one containing the JSON representation of the notebook, and the other containing the notebook visual interface.
-7. When the notebook has loaded, check at the bottom left of the Visual Studio Online interface to verify the current Python virtual environment. This should have changed to **Python 3.5.3** based on the configuration settings in the repo. If not, change it.
+7. When the notebook has loaded, at the bottom left of the Visual Studio Online interface, click the current Python virtual environment. This should have changed to **Python 3.5.3** based on the configuration settings in the repo, but select that virtual environment again anyway (the notebook was authored in a different version, which is indicated in its metadata).
 8. Read the notes in the notebook, running each code cell in turn, just as you did in the Azure Machine Learning Notebook VM Jupyter environment.
 
 ## Task 4: Use the Visual Studio Code Azure Machine Learning Extension
