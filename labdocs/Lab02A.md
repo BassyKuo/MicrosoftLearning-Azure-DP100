@@ -2,6 +2,8 @@
 
 The *Designer* interface provides a drag & drop environment in which you can define a workflow, or *pipeline* of data ingestion, transformation, and model training modules to create a machine learning model. You can then publish this pipeline as a web service that client applications can use for *inferencing* (generating predictions from new data).
 
+> **Note**: Azure Machine Learning Designer is in *preview* at the time of writing. You may experience some unexpected errors.
+
 ## Before You Start
 
 Before you start this lab, ensure that you have completed [Lab 1A](Lab01A.md) and [Lab 1B](Lab01B.md), which include tasks to create the Azure Machine Learning workspace and other resources used in this lab.

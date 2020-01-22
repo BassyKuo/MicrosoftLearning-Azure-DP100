@@ -2,6 +2,8 @@
 
 Now that you have a trained model, you can take the training pipeline and use it to create an inference pipeline for scoring new data.
 
+> **Note**: Azure Machine Learning Designer is in *preview* at the time of writing. You may experience some unexpected errors.
+
 ## Before You Start
 
 Before you start this lab, ensure that you have completed [Lab 1A](Lab01A.md) and [Lab 1B](Lab01B.md), which include tasks to create the Azure Machine Learning workspace and other resources used in this lab. You must also complete [Lab 2A](Lab02A.md), which includes tasks to create the Designer training pipeline used in this lab.
@@ -47,7 +49,7 @@ While the inference compute is being provisioned, you can prepare the inference 
     ```
 
 5. The inference pipeline includes the **Evaluate Model** module, which is not useful when predicting from new data, so delete this module.
-6. The ouput from the **Score Model** module includes all of the input features as well as the predicted label and probability score. To limit the output to only the prediction and probability, delete the connection between the **Score Model** module and the **web Service Output**, add an **Apply SQL Transformation** module from the **Data Transformations** section, connect the output from the **Score Model** module to the **t1** (left-most) input of the **Apply SQL Transformation**, and connect the output of the **Apply SQL Transformation** module to the **Web Service Output**. Then modify the settings of the **Apply SQL Transformation** module to use the following SQL query script:
+6. The ouput from the **Score Model** module includes all of the input features as well as the predicted label and probability score. To limit the output to only the prediction and probability, delete the connection between the **Score Model** module and the **Web Service Output**, add an **Apply SQL Transformation** module from the **Data Transformations** section, connect the output from the **Score Model** module to the **t1** (left-most) input of the **Apply SQL Transformation**, and connect the output of the **Apply SQL Transformation** module to the **Web Service Output**. Then modify the settings of the **Apply SQL Transformation** module to use the following SQL query script:
 
     ```SQL
     SELECT PatientID,
