@@ -34,6 +34,8 @@ You can perform most asset management tasks to set up your environment in the *S
 
 Compute instances in Azure Machine Learning provide an easy to manage Python environment for working with Azure ML without the need to manage your own Python installation. However, sometimes you may want to use your own graphical Python development environment. In this course, we'll use Visual Studio Online to simplify installation, but the principles of using the Azure Machine Learning SDK are the same in any Python environment.
 
+> **Note**: Visual Studio Online is in *preview* at the time of writing. You may experience some unexpected error messages.
+
 1. In a new browser tab, navigate to [https://online.visualstudio.com](https://online.visualstudio.com), and click **Get Started**.
 2. Sign into Visual Studio Online using the same Microsoft credentials you used to sign into Azure.
 3. Create a new environment with the following settings, creating a billing plan in your Azure subscription first if prompted:
