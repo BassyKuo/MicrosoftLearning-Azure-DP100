@@ -4,9 +4,11 @@
 
 Welcome to the hands-on lab exercises for course [DP-100 *Designing and Implementing a Data Science Solution on Azure*](https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01). The labs are designed to accompany the course and enable you to practice using the technologies described in the classroom materials.
 
-You should complete the labs in order, following the instructions in each Markdown document carefully. In some labs, you will need to clone this GitHub repo to your own development environment.
+You should complete the labs in order, following the instructions in each Markdown document carefully.
 
-> **Note**: The labs require a Microsoft Azure subscription. If your instructor has not provided you with one, you can sign up for a free trial at https://azure.microsoft.com.
+The labs require a Microsoft Azure subscription. If your instructor has not provided you with one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com).
+
+> **Tip**: As you work through the labs, you may experience unexpected issues due to idiosyncratic browser settings, network configurations, and so on. We've documented a few common issues in the [Tips](TIPS.md) document that may help.
 
 ### Module 1: Introduction to Azure Machine Learning
 
