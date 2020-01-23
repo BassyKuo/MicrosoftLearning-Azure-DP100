@@ -4,13 +4,23 @@ In this lab, you will create the Azure Machine Learning workspace that you will 
 
 ## Before You Start
 
-Azure Machine Learning (Azure ML) is a Microsoft Azure-based service for running data science and machine learning workloads at scale in the cloud. To use Azure Machine Learning, you will need an Azure subscription. If you do not already have one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com).
+If you do not already have one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com).
+
+If you are using an Azure Pass subscription, provided to you for this course, your account may not have been assigned to the subscription **Owner** role, which may be required for some operations in this course. To add your account to the **Owner** role:
+
+1. Sign into the [Azure portal](https://portal.azure.com) and view your **Subscriptions**.
+2. Select the subscription you created using an Azure pass (it will probably have a name similar to **Azure Pass - Sponsorship**).
+3. In the blade for your subscription, open the **My Permissions** page, and then click the link on it to view complete access details for the subscription.
+4. Under **Add role assignment**, click **Add**. Then select the following and click **Save**:
+    - **Role**: Owner
+    - **Assign access to**: Azure AD user, group, or service principal
+    - **Select**: The Microsoft account you used to sign into Azure.
 
 ## Task 1: Create an Azure ML Workspace
 
 As its name suggests, a workspace is a centralized place to manage all of the Azure ML assets you need to work on a machine learning project.
 
-1. Sign into the [Azure portal](https://portal.azure.com) and create a new **Machine Learning** resource, specifying a unique workspace name and creating a new resource group in the **North Central US** or **UK South** region. Select the **Enterprise** workspace edition.
+1. In the [Azure portal](https://portal.azure.com), create a new **Machine Learning** resource, specifying a unique workspace name and creating a new resource group in the **North Central US** or **UK South** region. Select the **Enterprise** workspace edition.
 
    > **Note**: If you can't use the **North Central US** or **UK South** region, you may need to use *Notebook VMs* instead of *Container Instances* to complete the labs in this course due to [limited preview availability](https://docs.microsoft.com/azure/machine-learning/service/concept-compute-instance).
    >
