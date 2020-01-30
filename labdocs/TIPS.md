@@ -6,7 +6,7 @@ The labs in this repo have been tested using a variety of operating systems, web
 
 - **Problem**: You get an error when trying to connect to a link in the labs or from one portal to another.
 - **Possible Cause**: You may be using a firewall that restricts the sites you can access.
-- **Possible Solution**: Speck to your network administrator or consult your personal firewall documentation to enable access to the required sites. Alternatively, if you are taking this course through an authorized learning partner, you may be provided with a hosted lab environment that consists of a Windows 10 virtual machine with a browser installed - if so, try to access this "jump box" using a web browser, and then use the browser-based virtual machine to perform the labs.
+- **Possible Solution**: Speak to your network administrator or consult your personal firewall documentation to enable access to the required sites. Alternatively, if you are taking this course through an authorized learning partner, you may be provided with a hosted lab environment that consists of a Windows 10 virtual machine with a browser installed - if so, try to access this "jump box" using a web browser, and then use the browser-based virtual machine to perform the labs.
 
 ## I'm unable to create an Azure Machine Learning workspace in Azure
 
@@ -16,9 +16,9 @@ The labs in this repo have been tested using a variety of operating systems, web
 
 ## Azure signs me in automatically with the wrong account
 
-- **Problem**: When you open the Azure portal in youtr browser, you don't get prompted to sign in - instead you are signed in automatically with a different account from the one you want to use in the labs.
+- **Problem**: When you open the Azure portal in youtr browser, you don't get prompted to sign in - instead you are signed in automatically with a different account from the one you want to use in the labs, or you get an authentication or "access forbidden" error.
 - **Possible Cause**: If you use mulitple Microsoft accounts (for example, a work account and a personal outlook.com account) on the same computer, your browser may cache credentials and sign you in automatically without giving you the opportunity to select a different account.
-- **Possible Solution**: Open a *private browsing* session in your browser and use that to complete the labs. Alternatively, install a second browser and use that. If you are taking this course through an authorized learning partner, you may be provided with a hosted lab environment that consists of a Windows 10 virtual machine with a browser installed - if so, use it.
+- **Possible Solution**: Try signing out of all Microsoft accounts in all browser sessions and clear the browser cache, or opening a *private browsing* session in your browser and use that to complete the labs. Alternatively, install a second browser and use that. If you are connecting a compute instance, try restarting the compute instance. If you are taking this course through an authorized learning partner, you may be provided with a hosted lab environment that consists of a Windows 10 virtual machine with a browser installed - if so, use it.
 
 ## Azure Machine Learning studio stops responding
 
