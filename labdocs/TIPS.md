@@ -17,7 +17,7 @@ The labs in this repo have been tested using a variety of operating systems, web
 ## Azure signs me in automatically with the wrong account
 
 - **Problem**: When you open the Azure portal in youtr browser, you don't get prompted to sign in - instead you are signed in automatically with a different account from the one you want to use in the labs, or you get an authentication or "access forbidden" error.
-- **Possible Cause**: If you use mulitple Microsoft accounts (for example, a work account and a personal outlook.com account) on the same computer, your browser may cache credentials and sign you in automatically without giving you the opportunity to select a different account.
+- **Possible Cause**: If you use multiple Microsoft accounts (for example, a work account and a personal outlook.com account) on the same computer, your browser may cache credentials and sign you in automatically without giving you the opportunity to select a different account.
 - **Possible Solution**: Try signing out of all Microsoft accounts in all browser sessions and clear the browser cache, or opening a *private browsing* session in your browser and use that to complete the labs. Alternatively, install a second browser and use that. If you are connecting a compute instance, try restarting the compute instance. If you are taking this course through an authorized learning partner, you may be provided with a hosted lab environment that consists of a Windows 10 virtual machine with a browser installed - if so, use it.
 
 ## Azure Machine Learning studio stops responding
@@ -30,7 +30,7 @@ The labs in this repo have been tested using a variety of operating systems, web
 
 - **Problem**: While working in a Jupyter notebook, a *kernel error* message is displayed and you can't save the notebook.
 - **Possible Cause**: Jupyter may sign you out automatically after a period of time.
-- **Possible Solution**: Switch to the browser tab containing trhe Jupyter home page, and refresh it. This forces you to reauthenticate, and re-establishes your session.
+- **Possible Solution**: Switch to the browser tab containing the Jupyter home page, and refresh it. This forces you to reauthenticate, and re-establishes your session.
 
 ## The terminal in Jupyter is blank
 
