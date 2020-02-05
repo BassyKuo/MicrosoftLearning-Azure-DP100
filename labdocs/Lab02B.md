@@ -24,13 +24,15 @@ In this lab, you will publish an inference pipeline as a containerized service i
     * **Compute name**: aks-cluster
     * **Kubernetes Service**: Create new
     * **Region**: *Any available region*
-    * **Virtual Machine size**: Standard_DS2_v2
+    * **Virtual Machine size**: Standard_DS2_v2 (*Use the filter to find this in the list*)
     * **Cluster purpose**: Dev-test
     * **Number of nodes**: 3
     * **Network configuration**: Basic
     * **Enable SSL configuration**: Unselected
 
-4. Verify that the compute target is in the *Creating* state, and proceed to the next task.
+4. Verify that the compute target is in the *Creating* state, and proceed to the next task. Returning periodically to refresh this page and verify that the cluster is being created.
+
+    > **Note**: Creating an AKS cluster can take a significant amount of time. If an error occurs during creation, delete the failed cluster and try again using a different region.
 
 ## Task 2: Create an Inference Pipeline
 

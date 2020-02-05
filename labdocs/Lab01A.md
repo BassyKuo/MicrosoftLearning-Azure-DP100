@@ -4,7 +4,7 @@ In this lab, you will create the Azure Machine Learning workspace that you will 
 
 ## Before You Start
 
-If you do not already have one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com).
+To complete the labs in this course, you will need an Azure subscription. If you do not already have one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com).
 
 If you are using an Azure Pass subscription, provided to you for this course, your account may not have been assigned to the subscription **Owner** role, which may be required for some operations in this course. To add your account to the **Owner** role:
 
@@ -65,12 +65,22 @@ Now that you have some compute resources that you can use to process data, you'l
 
 2. In the *Studio* interface, view the **Datasets** page. Datasets represent specific data files or tables that you plan to work with in Azure ML.
 3. Create a new dataset from web files, using the following settings:
-    * **Web URL**: https://aka.ms/diabetes-data
-    * **Name**: diabetes dataset (*be careful to match the case and spacing*)
-    * **Dataset type**: Tabular
-    * **Description**: Diabetes data
-    * **Settings and preview**: Review the automatically detected settings.
-    * **Schema**: Review the default column selections and data types.
+    * **Basic Info**:
+        * **Web URL**: https://aka.ms/diabetes-data
+        * **Name**: diabetes dataset (*be careful to match the case and spacing*)
+        * **Dataset type**: Tabular
+        * **Description**: Diabetes data
+    * **Settings and preview**:
+        * **File format**: Delimited
+        * **Delimiter**: Comma
+        * **Encoding**: UTF-8
+        * **Column headers**: Use headers from first file
+        * **Skip rows**: None
+    * **Schema**:
+        * Include all columns other than **Path**
+        * Review the automatically detected types
+    * **Confirm details**:
+        * Do not profile the dataset after creation
 4. After the dataset has been created, open it and view the **Explore** page to see a sample of the data. This data represents details from patients who have been tested for diabetes, and you will use it in many of the subsequent labs in this course.
 
     > **Note**: You can optionally generate a *profile* of the dataset to see more details. You'll explore datasets in more detail later in the course.

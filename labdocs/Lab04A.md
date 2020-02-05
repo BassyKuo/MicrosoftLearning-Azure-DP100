@@ -19,6 +19,7 @@ You can use many kinds of Azure data source in Azure Machine Learning. In this l
     - **Location**: The same location as your workspace
     - **Performance**: Standard
     - **Account kind**: StorageV2 (general purpose v2)
+    - **Replication**: Locally-redundant storage (LRS)
     - **Access tier (default)**: Hot
     - Use the default settings for networking
 
@@ -50,8 +51,8 @@ Now that you've created a storage container, you can register it as a datastore 
 
 In this task, you'll use the Azure Machine Learning SDK to upload and download data to and from your datastore.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com), view the **Compute** page for your workspace; and on the **Compute Instances** tab, ensure your compute instance is running. If not, start it.
-2. When the compute instance is running, click the **Jupyter** link to open the Jupyter home page in a new browser tab.
+1. In [Azure Machine Learning studio](https://ml.azure.com), view the **Compute** page for your workspace; and on the **Compute Instances** tab, start your compute instance.
+2. When the compute instance is running, refresh the Azure Machine Learning studio web page in your browser to ensure your authenticated session has not expired. Then click the **Jupyter** link to open the Jupyter home page in a new browser tab.
 3. In the Jupyter home page, in the **Users/DP100** folder, open the **04A - Working with Datastores.ipynb** notebook. Then read the notes in the notebook, running each code cell in turn.
-
-> **Note**: If you intend to continue straight to the [next exercise](Lab04B.md), leave your compute instance running. If you're taking a break, you might want to close all Jupyter tabs and **Stop** your compute instance to avoid incurring unnecessary costs.
+4. When you have finished running the code in the notebook, on the **File** menu, click **Close and Halt** to close it and shut down its Python kernel. Then close all Jupyter browser tabs.
+5. In Azure Machine Learning studio, on the **Compute** page, select your compute instance and click **Stop** to shut it down.
