@@ -51,13 +51,20 @@ While the inference compute is being provisioned, you can prepare the inference 
     ```
 
 5. The inference pipeline includes the **Evaluate Model** module, which is not useful when predicting from new data, so delete this module.
-6. The ouput from the **Score Model** module includes all of the input features as well as the predicted label and probability score. To limit the output to only the prediction and probability, delete the connection between the **Score Model** module and the **Web Service Output**, add an **Apply SQL Transformation** module from the **Data Transformations** section, connect the output from the **Score Model** module to the **t1** (left-most) input of the **Apply SQL Transformation**, and connect the output of the **Apply SQL Transformation** module to the **Web Service Output**. Then modify the settings of the **Apply SQL Transformation** module to use the following SQL query script:
+6. The ouput from the **Score Model** module includes all of the input features as well as the predicted label and probability score. To limit the output to only the prediction and probability, delete the connection between the **Score Model** module and the **Web Service Output**, add an **Execute Python Script** module from the **Python Language** section, connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**. Then modify the settings of the **Execute Python Script** module to use the following code (replacing all existing code):
 
-    ```SQL
-    SELECT PatientID,
-           [Scored Labels] AS DiabetesPrediction,
-           [Scored Probabilities] AS Probability
-    FROM t1
+    ```Python
+    import pandas as pd
+
+    def azureml_main(dataframe1 = None, dataframe2 = None):
+
+        scored_results = dataframe1[['PatientID', 'Scored Labels', 'Scored Probabilities']]
+        scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
+                                       'Scored Probabilities':'Probability'},
+                              inplace=True)
+        return scored_results
+
+
     ```
 
 7. Verify that your pipeline looks similar to the following:
@@ -88,6 +95,8 @@ Now you can test your deployed service from a client application - in this case,
 5. In Jupyter, in the **Users/DP100** folder, open **02B - Using the Visual Designer.ipynb**.
 6. In the notebook, paste the code you copied into the empty code cell.
 7. Run the code cell and view the output returned by your web service.
+8. When you have finished running the code in the notebook, on the **File** menu, click **Close and Halt** to close it and shut down its Python kernel. Then close all Jupyter browser tabs.
+9. In Azure Machine Learning studio, on the **Compute** page, select your compute instance and click **Stop** to shut it down.
 
 ## Task 5: Delete the Web Service and Compute
 
@@ -95,5 +104,3 @@ The web service is hosted in a Kubernetes cluster. If you don't intend to experi
 
 1. In the *Studio* web interface for your Azure ML workspace, on the **Endpoints** tab, select the **predict-diabetes** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the endpoint.
 2. On the **Compute** page, on the **Inference Clusters** tab, select the select the **aks-cluster** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the compute target.
-
-> **Note**: If you intend to continue straight to the [next exercise](Lab03A.md), leave your compute instance running. If you're taking a break, you might want to close the Jupyter tabs and **Stop** your compute instance to avoid incurring unnecessary costs.
