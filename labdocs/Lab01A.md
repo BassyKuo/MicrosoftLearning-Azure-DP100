@@ -47,7 +47,7 @@ One of the benefits of Azure Machine Learning is the ability to create cloud-bas
     * **Virtual Machine priority**: Dedicated
     * **Minimum number of nodes**: 0
     * **Maximum number of nodes**: 4
-    * **Idle seconds before scale down**: 120
+    * **Idle seconds before scale down**: 3600
 4. Note the **Inference Clusters** tab. This is where you can create and manage compute targets on which to deploy your trained models as web services for client applications to consume.
 5. Note the **Attached Compute** tab. This is where you could attach a virtual machine or Databricks cluster that exists outside of your workspace.
 

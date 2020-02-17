@@ -8,7 +8,7 @@ Now that you have a trained model, you can take the training pipeline and use it
 
 Before you start this lab, ensure that you have completed [Lab 1A](Lab01A.md) and [Lab 1B](Lab01B.md), which include tasks to create the Azure Machine Learning workspace and other resources used in this lab. You must also complete [Lab 2A](Lab02A.md), which includes tasks to create the Designer training pipeline used in this lab.
 
-## Task 1: Prepare Compute
+## Task 1: Prepare Inference Compute
 
 In this lab, you will publish an inference pipeline as a containerized service in an Azure Kubernetes Service (AKS) cluster. An AKS cluster can take some time to initialize, so you'll start the process before preparing your inference pipeline.
 
@@ -51,7 +51,7 @@ While the inference compute is being provisioned, you can prepare the inference 
     ```
 
 5. The inference pipeline includes the **Evaluate Model** module, which is not useful when predicting from new data, so delete this module.
-6. The ouput from the **Score Model** module includes all of the input features as well as the predicted label and probability score. To limit the output to only the prediction and probability, delete the connection between the **Score Model** module and the **Web Service Output**, add an **Execute Python Script** module from the **Python Language** section, connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**. Then modify the settings of the **Execute Python Script** module to use the following code (replacing all existing code):
+6. The output from the **Score Model** module includes all of the input features as well as the predicted label and probability score. To limit the output to only the prediction and probability, delete the connection between the **Score Model** module and the **Web Service Output**, add an **Execute Python Script** module from the **Python Language** section, connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**. Then modify the settings of the **Execute Python Script** module to use the following code (replacing all existing code):
 
     ```Python
     import pandas as pd
@@ -89,18 +89,18 @@ Now you have an inference pipeline for real-time inferencing, which you can publ
 Now you can test your deployed service from a client application - in this case, you'll use a notebook in your Notebook VM.
 
 1. On the **Endpoints** page, open the **predict-diabetes** real-time endpoint.
-2. When the **predict-diabetes** endpoint opens, on the **Test** page, note the default test input parameters and then click **Test** to submit them to the deployed web service and generate a prediction.
-3. On the **Consume** tab, view the sample code that is provided for **Python**, and then copy the entire Python sample script to the clipboard.
-4. On the **Compute** page, if your compute instance is not yet running, wait for it to start. Then click its **Jupyter** link.
-5. In Jupyter, in the **Users/DP100** folder, open **02B - Using the Visual Designer.ipynb**.
-6. In the notebook, paste the code you copied into the empty code cell.
-7. Run the code cell and view the output returned by your web service.
-8. When you have finished running the code in the notebook, on the **File** menu, click **Close and Halt** to close it and shut down its Python kernel. Then close all Jupyter browser tabs.
-9. In Azure Machine Learning studio, on the **Compute** page, select your compute instance and click **Stop** to shut it down.
+2. When the **predict-diabetes** endpoint opens, on the **Consume** tab, view the **REST endpoint** and **Primary key** values, noting the  to the clipboard.
+3. On the **Compute** page, if your compute instance is not yet running, wait for it to start. Then click its **Jupyter** link.
+4. In Jupyter, in the **Users/DP100** folder, open **02B - Using the Visual Designer.ipynb**.
+5. In the notebook, paste the code you copied into the empty code cell.
+6. Run the code cell and view the output returned by your web service.
+7. When you have finished running the code in the notebook, on the **File** menu, click **Close and Halt** to close it and shut down its Python kernel. Then close all Jupyter browser tabs.
 
-## Task 5: Delete the Web Service and Compute
+## Task 5: Delete the Web Service and Stop Compute
 
-The web service is hosted in a Kubernetes cluster. If you don't intend to experiment with it further, you should delete the endpoint and the cluster to avoid accruing unnecessary Azure charges.
+The web service is hosted in a Kubernetes cluster. If you don't intend to experiment with it further, you should delete the endpoint and the cluster to avoid accruing unnecessary Azure charges. You should also stop other compute resources until you need them again.
 
-1. In the *Studio* web interface for your Azure ML workspace, on the **Endpoints** tab, select the **predict-diabetes** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the endpoint.
+1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Endpoints** tab, select the **predict-diabetes** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the endpoint.
 2. On the **Compute** page, on the **Inference Clusters** tab, select the select the **aks-cluster** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the compute target.
+3. On the **Compute** page, on the **Training clusters** tab, open the **aml-cluster** compute target and click **Edit**. Then set the **Minimum number of nodes** setting to **0** and click **Update**.
+4. On the **Compute** page, on the **Compute Instances** tab, select your compute instance and click **Stop** to shut it down.
