@@ -89,13 +89,12 @@ Now you have an inference pipeline for real-time inferencing, which you can publ
 Now you can test your deployed service from a client application - in this case, you'll use a notebook in your Notebook VM.
 
 1. On the **Endpoints** page, open the **predict-diabetes** real-time endpoint.
-2. When the **predict-diabetes** endpoint opens, on the **Test** page, note the default test input parameters and then click **Test** to submit them to the deployed web service and generate a prediction.
-3. On the **Consume** tab, view the sample code that is provided for **Python**, and then copy the entire Python sample script to the clipboard.
-4. On the **Compute** page, if your compute instance is not yet running, wait for it to start. Then click its **Jupyter** link.
-5. In Jupyter, in the **Users/DP100** folder, open **02B - Using the Visual Designer.ipynb**.
-6. In the notebook, paste the code you copied into the empty code cell.
-7. Run the code cell and view the output returned by your web service.
-8. When you have finished running the code in the notebook, on the **File** menu, click **Close and Halt** to close it and shut down its Python kernel. Then close all Jupyter browser tabs.
+2. When the **predict-diabetes** endpoint opens, on the **Consume** tab, note the **REST endpoint** and **Primary key** values.
+3. In another browser tab, open the **Compute** page for your workspace in Azure Machine Learning studio. If your compute instance is not yet running, wait for it to start. Then click its **Jupyter** link.
+4. In Jupyter, in the **Users/DP100** folder, open **02B - Using the Visual Designer.ipynb**.
+5. In the notebook, replace the **ENDPOINT** and **PRIMARY_KEY** placeholders with the values for your service, which you can copy from the **Consume** tab on the page for your endpoint.
+6. Run the code cell and view the output returned by your web service.
+7. When you have finished running the code in the notebook, on the **File** menu, click **Close and Halt** to close it and shut down its Python kernel. Then close all Jupyter browser tabs.
 
 ## Task 5: Delete the Web Service and Stop Compute
 
