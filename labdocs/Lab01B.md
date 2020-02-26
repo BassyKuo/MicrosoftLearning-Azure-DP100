@@ -41,12 +41,17 @@ Compute instances in Azure Machine Learning provide an easy to manage Python env
 
 1. In a new browser tab, navigate to [https://online.visualstudio.com](https://online.visualstudio.com), and click **Get Started**.
 2. Sign into Visual Studio Online using the same Microsoft credentials you used to sign into Azure.
-3. Create a new environment with the following settings, creating a billing plan in your Azure subscription first if prompted:
+3. Click **Create environment**. If you don't already have a Visual Studio Online plan, create one. This is used to track resource utlization by your Visual Studio Online environments. Then create an environment with the following settings:
     - **Environment Name**: *A unique name of your choice*
     - **Git Repository**: MicrosoftLearning/DP100
     - **Instance Type**: Standard (Linux)
-    - **suspend idle environment after**: 30 Minutes
-4. Wait for your environment to be created, and then click its name to connect to it.
+    - **suspend idle environment after**: 60 Minutes
+4.  Wait for the environment to be created, and then click **Connect** to connect to it. This will open a browser-based instance of Visual Studio Code.
+5. Wait for a minute or so while the environment is set up for you. It might look like nothing is happening, but in the background we are installing some extensions that you will use in the labs. You'll see the following things happen:
+    - The files in this repo will appear in the pane on the left.
+    - The color scheme will change to a light background with dark text.
+    - Eventually, a new file named **REFRESH NOW** will appear in the pane on the left. This is your indication that everything has been installed.
+6. After the **REFRESH NOW** file has appeared, refresh the web page to ensure all of the extensions are loaded and you're ready to start.
 
     Visual Studio Online is a hosted instance of Visual Studio Code that you can use in a web browser. Visual Studio Code is a general code editing environment, with support for various programming languages through the installation of *extensions*. To work with Python, you'll need the Microsoft Python extension, which was installed for you along with some commonly used Python packages when you created this environment from the **DP100** repo.
 
