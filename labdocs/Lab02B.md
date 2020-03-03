@@ -71,14 +71,14 @@ While the inference compute is being provisioned, you can prepare the inference 
 
     ![Visual Inference Pipeline](images/visual-inference.jpg)
 
-8. Run the pipeline as a new experiment named **predict-diabetes** on the **aml-compute** compute target you used for training. This may take a while!
+8. Submit the pipeline as a new experiment named **predict-diabetes** on the **aml-compute** compute target you used for training. This may take a while!
 
 ## Task 3: Publish a Web Service
 
 Now you have an inference pipeline for real-time inferencing, which you can publish as a web service for client applications to use.
 
-1. Return the the **Compute** page and on the **Inference Compute** tab, refresh the view and verify that your **aks-cluster** compute has been created. If not, wait for your inference cluster to be created. This may take quite a bit of time.
-2. Switch back to the **Designer** tab and reopen your **Predict Diabetes** inference pipeline. If it has not yet finished running, await it's completion. Then visualize the output of the **Execute Python Script** module to see the predicted labels and probabilties for the three patient observations in the input data.
+1. Return to the **Compute** page and on the **Inference Compute** tab, refresh the view and verify that your **aks-cluster** compute has been created. If not, wait for your inference cluster to be created. This may take quite a bit of time.
+2. Switch back to the **Designer** tab and reopen your **Predict Diabetes** inference pipeline. If it has not yet finished running, await it's completion. Then visualize the output of the **Execute Python Script** module to see the predicted labels and probabilities for the three patient observations in the input data.
 3. At the top right, click **Deploy**, and set up a new real-time endpoint named **predict-diabetes** on the **aks-cluster** compute target you created.
 4. Wait for the web service to be deployed - this can take several minutes. The deployment status is shown at the top left of the Designer interface.
 
