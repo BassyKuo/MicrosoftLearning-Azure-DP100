@@ -23,12 +23,14 @@ In this lab, you will publish an inference pipeline as a containerized service i
 3. On the **Inference Clusters** tab, add a new cluster with the following settings:
     * **Compute name**: aks-cluster
     * **Kubernetes Service**: Create new
-    * **Region**: *Any available region*
+    * **Region**: *A region <u>other than the one where your workspace is provisioned</u>*
     * **Virtual Machine size**: Standard_DS2_v2 (*Use the filter to find this in the list*)
     * **Cluster purpose**: Dev-test
     * **Number of nodes**: 3
     * **Network configuration**: Basic
     * **Enable SSL configuration**: Unselected
+
+    > **Mote**: Your Azure subscription may have restrictions on the number of cores you can provision, with additional regional restrictions. In this lab, it's important to use the **Dev-test** cluster purpose (to allow your endpoint to be deployed on a cluster with fewer than the 12 core minimum for production clusters) and the **Standard_DS2_v2** virtual machine size (which includes two cores per node) so that your three nodes use only six cores.
 
 4. Verify that the compute target is in the *Creating* state, and proceed to the next task. Returning periodically to refresh this page and verify that the cluster is being created.
 
