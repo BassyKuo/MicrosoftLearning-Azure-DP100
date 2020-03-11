@@ -8,8 +8,6 @@ The *Designer* interface provides a drag & drop environment in which you can def
 
 Before you start this lab, ensure that you have completed [Lab 1A](Lab01A.md) and [Lab 1B](Lab01B.md), which include tasks to create the Azure Machine Learning workspace and other resources used in this lab.
 
-Then in [Azure Machine Learning studio](https://ml.azure.com) for your workspace, on the **Compute** page, on the **Training clusters** tab, open the **aml-cluster** compute target you created preciously and click **Edit**. Then set the **Minimum number of nodes** setting to **1** and click **Update**. This will reduce the time it takes your pipeline to run during the lab.
-
 ## Task 1: Create a Designer Pipeline and Explore Data
 
 To get started with Designer, first you must create a pipeline and add the dataset you want to work with.

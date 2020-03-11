@@ -104,5 +104,4 @@ The web service is hosted in a Kubernetes cluster. If you don't intend to experi
 
 1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Endpoints** tab, select the **predict-diabetes** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the endpoint.
 2. On the **Compute** page, on the **Inference Clusters** tab, select the select the **aks-cluster** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the compute target.
-3. On the **Compute** page, on the **Training clusters** tab, open the **aml-cluster** compute target and click **Edit**. Then set the **Minimum number of nodes** setting to **0** and click **Update**.
-4. On the **Compute** page, on the **Compute Instances** tab, select your compute instance and click **Stop** to shut it down.
+3. On the **Compute** page, on the **Compute Instances** tab, select your compute instance and click **Stop** to shut it down.
