@@ -6,7 +6,12 @@ The *Designer* interface provides a drag & drop environment in which you can def
 
 ## Before You Start
 
-Before you start this lab, ensure that you have completed [Lab 1A](Lab01A.md) and [Lab 1B](Lab01B.md), which include tasks to create the Azure Machine Learning workspace and other resources used in this lab.
+Before you start this lab, ensure that you have completed [Lab 1A](Lab01A.md) and [Lab 1B](Lab01B.md), which include tasks to create the Azure Machine Learning workspace and other resources used in this lab. Then follow these steps to initialize the compute you'll need for this lab:
+
+1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Compute** page, on the **Training clusters** tab, click the name of the **aml-cluster** training cluster you created previously.
+2. Edit your training cluster to change the **Minimum number of nodes** to 2 (so both the minimum and maximum number of nodes is 2), and click **Update**. This will ensure that your cluster nodes are always running, and minimize the time you will need to wait for them to start.
+
+    > **Important**: If you decide not to complete this lab, reset the minimum number of nodes to 0 to avoid incurring unnecessary cost.
 
 ## Task 1: Create a Designer Pipeline and Explore Data
 
@@ -17,7 +22,7 @@ To get started with Designer, first you must create a pipeline and add the datas
 3. Note that you need to specify a compute target on which to run the pipeline. In the **Settings** pane, click **Select compute target** and select the **aml-cluster** compute target you created in the previous lab.
 4. On the left side of the designer, expand the **Datasets** section, and drag the **diabetes dataset** dataset you created in the previous exercise onto the canvas.
 5. Select the **diabetes dataset** module on the canvas, and view its settings (the settings pane for the dataset may open automatically and cover the canvas). Then on the **outputs** tab, click the **Visualize** icon (which looks like a column chart).
-6. Review the schema of the data, noting that you can see the distributions of the various columns as histograms. Then close the visualization, and then close or resize the settings pane using the X or **<sub>&#8599;</sub><sup>&#8601;</sup>** icon so you can see the pipeline canvas with the dataset on it.
+6. Review the schema of the data, noting that you can see the distributions of the various columns as histograms. Then close the visualization, and then close or minimize the settings pane using the X or **<sub>&#8599;</sub><sup>&#8601;</sup>** icon so you can see the pipeline canvas with the dataset on it.
 
 ## Task 2: Add Transformations
 
@@ -32,7 +37,7 @@ Before you can train a model, you typically need to apply some preprocessing tra
     * BMI
     * DiabetesPedigree
 
-    **Note**: We're normalizing the numeric columns put them on the same scale, and avoid columns with large values doiminating model training. You'd normally apply a whole bunch of pre-processing transformations like this to prepare your data for training, but we'll keep things simple in this exercise.
+    **Note**: We're normalizing the numeric columns put them on the same scale, and avoid columns with large values dominating model training. You'd normally apply a whole bunch of pre-processing transformations like this to prepare your data for training, but we'll keep things simple in this exercise.
 
 3. Now we're ready to split the data into separate datasets for training and validation. In the pane on the left, in the **Data Transformations** section, drag a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the *Transformed Dataset* (left) output of the **Normalize Data** module to the input of the **Split Data** module.
 4. Select the **Split Data** module, and configure its settings as follows:

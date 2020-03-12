@@ -26,11 +26,11 @@ In this lab, you will publish an inference pipeline as a containerized service i
     * **Region**: *A region <u>other than the one where your workspace is provisioned</u>*
     * **Virtual Machine size**: Standard_DS2_v2 (*Use the filter to find this in the list*)
     * **Cluster purpose**: Dev-test
-    * **Number of nodes**: 3
+    * **Number of nodes**: 2
     * **Network configuration**: Basic
     * **Enable SSL configuration**: Unselected
 
-    > **Mote**: Your Azure subscription may have restrictions on the number of cores you can provision, with additional regional restrictions. In this lab, it's important to use the **Dev-test** cluster purpose (to allow your endpoint to be deployed on a cluster with fewer than the 12 core minimum for production clusters) and the **Standard_DS2_v2** virtual machine size (which includes two cores per node) so that your three nodes use only six cores.
+    > **Note**: Your Azure subscription may have restrictions on the number of cores you can provision, with additional regional restrictions. In this lab, it's important to create your AKS cluster in a different regiosn from your other compute, and to use the **Dev-test** cluster purpose (to allow your endpoint to be deployed on a cluster with fewer than the 12 core minimum for production clusters) and the **Standard_DS2_v2** virtual machine size (which includes two cores per node, so that your two nodes use only four cores).
 
 4. Verify that the compute target is in the *Creating* state, and proceed to the next task. Returning periodically to refresh this page and verify that the cluster is being created.
 
@@ -65,8 +65,6 @@ While the inference compute is being provisioned, you can prepare the inference 
                                        'Scored Probabilities':'Probability'},
                               inplace=True)
         return scored_results
-
-
     ```
 
 7. Verify that your pipeline looks similar to the following:
@@ -80,9 +78,9 @@ While the inference compute is being provisioned, you can prepare the inference 
 Now you have an inference pipeline for real-time inferencing, which you can publish as a web service for client applications to use.
 
 1. Return to the **Compute** page and on the **Inference Compute** tab, refresh the view and verify that your **aks-cluster** compute has been created. If not, wait for your inference cluster to be created. This may take quite a bit of time.
-2. Switch back to the **Designer** tab and reopen your **Predict Diabetes** inference pipeline. If it has not yet finished running, await it's completion. Then visualize the output of the **Execute Python Script** module to see the predicted labels and probabilities for the three patient observations in the input data.
+2. Switch back to the **Designer** tab and reopen your **Predict Diabetes** inference pipeline. If it has not yet finished running, await it's completion. Then visualize the **Result dataset** output of the **Execute Python Script** module to see the predicted labels and probabilities for the three patient observations in the input data.
 3. At the top right, click **Deploy**, and set up a new real-time endpoint named **predict-diabetes** on the **aks-cluster** compute target you created.
-4. Wait for the web service to be deployed - this can take several minutes. The deployment status is shown at the top left of the Designer interface.
+4. Wait for the web service to be deployed - this can take several minutes. The deployment status is shown at the top left of the designer interface.
 
     > **Tip**: While you're waiting for your service to be deployed, why not spend some time reviewing the Azure Machine Learning Designer documentation at [https://docs.microsoft.com/azure/machine-learning/service/concept-designer](https://docs.microsoft.com/azure/machine-learning/service/concept-designer)?
 
@@ -103,5 +101,6 @@ Now you can test your deployed service from a client application - in this case,
 The web service is hosted in a Kubernetes cluster. If you don't intend to experiment with it further, you should delete the endpoint and the cluster to avoid accruing unnecessary Azure charges. You should also stop other compute resources until you need them again.
 
 1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Endpoints** tab, select the **predict-diabetes** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the endpoint.
-2. On the **Compute** page, on the **Inference Clusters** tab, select the select the **aks-cluster** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the compute target.
-3. On the **Compute** page, on the **Compute Instances** tab, select your compute instance and click **Stop** to shut it down.
+2. On the **Compute** page, on the **Inference clusters** tab, select the select the **aks-cluster** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the compute target.
+3. On the **Compute** page, on the **Training clusters** tab, edit the **aml-cluster** and reset the **minimum number of nodes** to 0.
+4. On the **Compute** page, on the **Compute Instances** tab, select your compute instance and click **Stop** to shut it down.

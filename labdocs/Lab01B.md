@@ -19,6 +19,8 @@ You can perform most asset management tasks to set up your environment in the *S
     pip install --upgrade azureml-sdk[notebooks,automl,explain]
     ```
 
+    You may see some warnings as the package dependencies are installed. You can ignore these.
+
     > **More Information**: For more details about installing the Azure ML SDK and its optional components, see the [Azure ML SDK Documentation](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
 5. Next, run the following commands to change the current directory to the **Users** directory, and retrieve the notebooks you will use in the labs for this course:
@@ -49,31 +51,30 @@ Compute instances in Azure Machine Learning provide an easy to manage Python env
 4.  Wait for the environment to be created, and then click **Connect** to connect to it. This will open a browser-based instance of Visual Studio Code.
 5. Wait for a minute or so while the environment is set up for you. It might look like nothing is happening, but in the background we are installing some extensions that you will use in the labs. You'll see the following things happen:
     - The files in this repo will appear in the pane on the left.
-    - The color scheme will change to a light background with dark text.
-    - Eventually, a new file named **REFRESH NOW** will appear in the pane on the left. This is your indication that everything has been installed.
+    - After several minutes, a new file named **REFRESH NOW** will appear in the pane on the left. This is your indication that everything has been installed.
 6. After the **REFRESH NOW** file has appeared, refresh the web page to ensure all of the extensions are loaded and you're ready to start.
 
     Visual Studio Online is a hosted instance of Visual Studio Code that you can use in a web browser. Visual Studio Code is a general code editing environment, with support for various programming languages through the installation of *extensions*. To work with Python, you'll need the Microsoft Python extension, which was installed for you along with some commonly used Python packages when you created this environment from the **DP100** repo.
 
     The hosted Visual Studio Code environment includes three installations of Python (versions 2.7.13, 3.5.3, and 3.8.0). You will use the Python **3.5.3** virtual environment. In your own installation, you are responsible for installing Python, creating virtual environments, and installing the packages you need. In this lab, most of the general Python configuration has been done for you, but you need to install the Azure Machine Learning SDK.
 
-5. In the Visual Studio Online environment, wait for the contents of the DP100 repo to be loaded, and then in the Application Menu (**&#9776;**), on the **View** menu, click **Command Palette** (or press CTRL+SHIFT+P). Then in the Palette, enter the command **Python: Create Terminal**. This opens a Python terminal pane at the bottom of the Visual Studio Online interface.
+7. In the Visual Studio Online environment, wait for the contents of the DP100 repo to be loaded, and then in the Application Menu (**&#9776;**), on the **View** menu, click **Command Palette** (or press CTRL+SHIFT+P). Then in the Palette, enter the command **Python: Create Terminal**. This opens a Python terminal pane at the bottom of the Visual Studio Online interface.
 
     > **Tip**: If the *Python: Create Terminal* command is not listed, refresh the browser to reload the environment and try again.
 
-6. In the terminal pane, enter the following command to change to the directory where the Python 3.5.3 virtual environment is defined:
+8. In the terminal pane, enter the following command to change to the directory where the Python 3.5.3 virtual environment is defined:
 
     ````bash
     cd /usr/bin
     ````
 
-7. Now install the Azure Machine Learning SDK (with the optional *notebooks* extra package) using this command:
+9. Now install the Azure Machine Learning SDK (with the optional *notebooks* extra package) using this command:
 
     ```bash
     sudo pip install azureml-sdk[notebooks]
     ```
 
-8. Close the Terminal pane.
+10. Close the Terminal pane.
 
 ## Task 3: Use the Azure ML SDK in Visual Studio Online
 

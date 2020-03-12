@@ -26,6 +26,12 @@ The labs in this repo have been tested using a variety of operating systems, web
 - **Possible Cause**: Azure Machine Learning may sign you out automatically after a period of time.
 - **Possible Solution**: Refreshing the page usually forces you to reauthenticate, and re-establishes your session.
 
+## I see a *service error* when connecting to Jupyter notebook
+
+- **Problem**: While working in a Jupyter notebook, a *service error* message is displayed.
+- **Possible Cause**: The Jupyter service in the compute instance may have stopped reponding.
+- **Possible Solution**: Restart the compute instance. If it won't restart, create a new one (and reinstall the Azure ML SDK in the Jupyter terminal after starting it).
+
 ## I see a *kernel error* in a Jupyter notebook
 
 - **Problem**: While working in a Jupyter notebook, a *kernel error* message is displayed and you can't save the notebook.
@@ -47,7 +53,7 @@ The labs in this repo have been tested using a variety of operating systems, web
 ## I get unexpected Python package errors when running code
 
 - **Problem**: Code doesn't run as expected, but results in an error indicating an issue with Python packages.
-- **Possible Cause**: There are frequent updates to the Azure Machine Learning Python SDK, and it depends on numerous other Pythn packages. It's possible that the required version of a Python package is not installed.
+- **Possible Cause**: There are frequent updates to the Azure Machine Learning Python SDK, and it depends on numerous other Python packages. It's possible that the required version of a Python package is not installed.
 - **Possible Solution**: Try using the following command to force a reinstall of Azure Machine Learning SDK components and dependencies.
 
     ```bash
