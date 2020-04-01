@@ -38,7 +38,7 @@ The labs require a Microsoft Azure subscription. If your instructor has not prov
 ### Module 6: Orchestrating Operations with Pipelines
 
 - [Lab 6A: Creating a Pipeline](Lab06A.md)
-- [Lab 6B: Publishing a Pipeline Service](Lab06B.md)
+- [Lab 6B: Publishing a Pipeline](Lab06B.md)
 
 ### Module 7: Deploying and Consuming Models
 
