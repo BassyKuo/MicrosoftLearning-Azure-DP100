@@ -14,7 +14,7 @@ In this lab, you will publish an inference pipeline as a containerized service i
 
 1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Compute** page for your workspace, review the existing compute targets under each tab. These should include:
     * **Compute Instances**: The compute instance you created in a previous lab.
-    * **Training Clusters**: The **aml-cluster** compute target you created in a previous lab].
+    * **Training Clusters**: The **aml-cluster** compute target you created in a previous lab.
     * **Inference Clusters**: None (yet!)
     * **Attached Compute**: None (this is where you could attach a virtual machine or Databricks cluster that exists outside of your workspace)
 
@@ -71,7 +71,7 @@ While the inference compute is being provisioned, you can prepare the inference 
 
     ![Visual Inference Pipeline](images/visual-inference.jpg)
 
-8. Submit the pipeline as a new experiment named **predict-diabetes** on the **aml-compute** compute target you used for training. This may take a while!
+8. Submit the pipeline as a new experiment named **predict-diabetes** on the **aml-cluster** compute target you used for training. This may take a while!
 
 ## Task 3: Publish a Web Service
 
