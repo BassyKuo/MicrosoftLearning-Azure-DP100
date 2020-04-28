@@ -41,7 +41,7 @@ One of the benefits of Azure Machine Learning is the ability to create cloud-bas
 
 1. In the Azure Machine Learning studio web interface for your workspace, view the **Compute** page. This is where you'll manage all the compute targets for your data science activities.
 2. On the **Compute Instances** tab, add a new compute instance, giving it a unique name and using the **STANDARD_DS1_V2** VM type template. You'll use this VM as a development environment in subsequent labs.
-3. While the notebook VM is being created, switch to the **Training Clusters** tab, and add a new training cluster with the following settings:
+3. While the notebook VM is being created, switch to the **Compute Clusters** tab, and add a new compute cluster with the following settings:
     * **Compute name**: aml-cluster
     * **Virtual Machine size**: Standard_DS1_v2
     * **Virtual Machine priority**: Dedicated

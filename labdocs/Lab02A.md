@@ -8,8 +8,8 @@ The *Designer* interface provides a drag & drop environment in which you can def
 
 Before you start this lab, ensure that you have completed [Lab 1A](Lab01A.md) and [Lab 1B](Lab01B.md), which include tasks to create the Azure Machine Learning workspace and other resources used in this lab. Then follow these steps to initialize the compute you'll need for this lab:
 
-1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Compute** page, on the **Training clusters** tab, click the name of the **aml-cluster** training cluster you created previously.
-2. Edit your training cluster to change the **Minimum number of nodes** to 2 (so both the minimum and maximum number of nodes is 2), and click **Update**. This will ensure that your cluster nodes are always running, and minimize the time you will need to wait for them to start.
+1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Compute** page, on the **Compute clusters** tab, click the name of the **aml-cluster** compute cluster you created previously.
+2. Edit your compute cluster to change the **Minimum number of nodes** to 2 (so both the minimum and maximum number of nodes is 2), and click **Update**. This will ensure that your cluster nodes are always running, and minimize the time you will need to wait for them to start.
 
     > **Important**: If you decide not to complete this lab, reset the minimum number of nodes to 0 to avoid incurring unnecessary cost.
 

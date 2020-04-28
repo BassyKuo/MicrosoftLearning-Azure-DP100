@@ -14,7 +14,7 @@ In this lab, you will publish an inference pipeline as a containerized service i
 
 1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Compute** page for your workspace, review the existing compute targets under each tab. These should include:
     * **Compute Instances**: The compute instance you created in a previous lab.
-    * **Training Clusters**: The **aml-cluster** compute target you created in a previous lab.
+    * **Compute Clusters**: The **aml-cluster** compute target you created in a previous lab.
     * **Inference Clusters**: None (yet!)
     * **Attached Compute**: None (this is where you could attach a virtual machine or Databricks cluster that exists outside of your workspace)
 
@@ -102,5 +102,5 @@ The web service is hosted in a Kubernetes cluster. If you don't intend to experi
 
 1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Endpoints** tab, select the **predict-diabetes** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the endpoint.
 2. On the **Compute** page, on the **Inference clusters** tab, select the select the **aks-cluster** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the compute target.
-3. On the **Compute** page, on the **Training clusters** tab, edit the **aml-cluster** and reset the **minimum number of nodes** to 0.
+3. On the **Compute** page, on the **Compute clusters** tab, edit the **aml-cluster** and reset the **minimum number of nodes** to 0.
 4. If you're finished working with Azure Machine Learning for the day, on the **Compute Instances** tab, select your compute instance and click **Stop** to shut it down. Otherwise, leave it running for the next lab.
