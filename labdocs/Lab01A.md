@@ -48,7 +48,7 @@ One of the benefits of Azure Machine Learning is the ability to create cloud-bas
     - **Compute name**: aml-cluster
     - **Virtual Machine type**: CPU
     - **Virtual Machine priority**: Dedicated
-    - **Virtual Machine size**: Standard_DS1_v2
+    - **Virtual Machine size**: Standard_DS2_v2
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
