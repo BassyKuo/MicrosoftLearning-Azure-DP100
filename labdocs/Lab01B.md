@@ -44,10 +44,10 @@ Compute instances in Azure Machine Learning provide an easy to manage Python env
 1. In a new browser tab, navigate to [https://online.visualstudio.com](https://online.visualstudio.com), and click **Get Started**.
 2. Sign into Visual Studio Codespaces using the same Microsoft credentials you used to sign into Azure.
 3. Click **Create environment**. If you don't already have a Visual Studio Codespaces plan, create one. This is used to track resource utilization by your codespaces. Then create a codespace with the following settings:
-    - **Environment Name**: *A unique name of your choice*
+    - **Codespace Name**: *A unique name of your choice*
     - **Git Repository**: MicrosoftLearning/DP100
     - **Instance Type**: Standard (Linux)
-    - **suspend idle environment after**: 60 Minutes
+    - **suspend idle Codespace after**: 60 Minutes
 4.  Wait for the codespace to be created. This will open a browser-based instance of Visual Studio Code.
 5. Wait for a minute or so while the environment is set up for you. It might look like nothing is happening, but in the background we are installing some extensions that you will use in the labs. You'll see the following things happen:
     - The files in this repo will appear in the pane on the left.
