@@ -1,6 +1,6 @@
 # Lab 9B: Interpreting Models
 
-Whrn you train your own models, you can use *explainers* to determine feature importance.
+When you train your own models, you can use *explainers* to determine feature importance.
 
 ## Before You Start
 
