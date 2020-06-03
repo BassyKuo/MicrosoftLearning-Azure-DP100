@@ -50,8 +50,9 @@ Compute instances in Azure Machine Learning provide an easy to manage Python env
 3.  Wait for the codespace to be created. This will open a browser-based instance of Visual Studio Code.
 4. Wait for a minute or so while the environment is set up for you. It might look like nothing is happening, but in the background we are installing some extensions that you will use in the labs. You'll see the following things happen:
     - A script pane will open to show status as your codespace is prepared.
+    - The Visual Studio Code interface will be loaded.
     - The files in this repo will appear in the pane on the left.
-5. After the script has completed, you can close the script pane.
+5. After setup has completed successfully, you can close the **Creation Log** pane.
 
     A Visual Studio Codespace is a hosted instance of Visual Studio Code that you can use in a web browser. Visual Studio Code is a general code editing environment, with support for various programming languages through the installation of *extensions*. To work with Python, you'll need the Microsoft Python extension, which was installed for you along with some commonly used Python packages when you created this environment from the **DP100** repo.
 
