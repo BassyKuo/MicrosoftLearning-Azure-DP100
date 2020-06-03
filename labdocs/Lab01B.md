@@ -49,7 +49,7 @@ Compute instances in Azure Machine Learning provide an easy to manage Python env
     - **suspend idle Codespace after**: 60 Minutes
 3.  Wait for the codespace to be created. This will open a browser-based instance of Visual Studio Code.
 4. Wait for a minute or so while the environment is set up for you. It might look like nothing is happening, but in the background we are installing some extensions that you will use in the labs. You'll see the following things happen:
-    - A script pane will open to show setup status.
+    - A script pane will open to show status as your codespace is prepared.
     - The files in this repo will appear in the pane on the left.
 5. After the script has completed, you can close the script pane.
 
