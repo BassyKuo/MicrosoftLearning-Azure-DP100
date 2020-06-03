@@ -41,40 +41,39 @@ Compute instances in Azure Machine Learning provide an easy to manage Python env
 
 > **Note**: Visual Studio Codespaces is in *preview* at the time of writing. You may experience some unexpected error messages.
 
-1. In a new browser tab, navigate to [https://online.visualstudio.com](https://online.visualstudio.com), and click **Get Started**.
-2. Sign into Visual Studio Codespaces using the same Microsoft credentials you used to sign into Azure.
-3. Click **Create environment**. If you don't already have a Visual Studio Codespaces plan, create one. This is used to track resource utilization by your codespaces. Then create a codespace with the following settings:
+1. In a new browser tab, navigate to [https://online.visualstudio.com](https://online.visualstudio.com), and sign into Visual Studio Codespaces using the same Microsoft credentials you used to sign into Azure.
+2. Create a codespace with the following settings (if you don't already have a Visual Studio Codespaces plan, create one when prompted - this is used to track resource utilization by your codespaces):
     - **Codespace Name**: *A unique name of your choice*
     - **Git Repository**: MicrosoftLearning/DP100
     - **Instance Type**: Standard (Linux)
     - **suspend idle Codespace after**: 60 Minutes
-4.  Wait for the codespace to be created. This will open a browser-based instance of Visual Studio Code.
-5. Wait for a minute or so while the environment is set up for you. It might look like nothing is happening, but in the background we are installing some extensions that you will use in the labs. You'll see the following things happen:
+3.  Wait for the codespace to be created. This will open a browser-based instance of Visual Studio Code.
+4. Wait for a minute or so while the environment is set up for you. It might look like nothing is happening, but in the background we are installing some extensions that you will use in the labs. You'll see the following things happen:
     - The files in this repo will appear in the pane on the left.
     - After several minutes, a new file named **REFRESH NOW** will appear in the pane on the left. This is your indication that everything has been installed.
-6. After the **REFRESH NOW** file has appeared, refresh the web page to ensure all of the extensions are loaded and you're ready to start.
+5. After the **REFRESH NOW** file has appeared, refresh the web page to ensure all of the extensions are loaded and you're ready to start.
 
     A Visual Studio Codespace is a hosted instance of Visual Studio Code that you can use in a web browser. Visual Studio Code is a general code editing environment, with support for various programming languages through the installation of *extensions*. To work with Python, you'll need the Microsoft Python extension, which was installed for you along with some commonly used Python packages when you created this environment from the **DP100** repo.
 
     The hosted Visual Studio Code environment includes three installations of Python (versions 2.7.13, 3.5.3, and 3.8.0). You will use the Python **3.5.3** virtual environment. In your own installation, you are responsible for installing Python, creating virtual environments, and installing the packages you need. In this lab, most of the general Python configuration has been done for you, but you need to install the Azure Machine Learning SDK.
 
-7. In the Visual Studio codespace, wait for the contents of the DP100 repo to be loaded, and then in the Application Menu (**&#9776;**), on the **View** menu, click **Command Palette** (or press CTRL+SHIFT+P). Then in the Palette, enter the command **Python: Create Terminal**. This opens a Python terminal pane at the bottom of the interface.
+6. In the Visual Studio codespace, wait for the contents of the DP100 repo to be loaded, and then in the Application Menu (**&#9776;**), on the **View** menu, click **Command Palette** (or press CTRL+SHIFT+P). Then in the Palette, enter the command **Python: Create Terminal**. This opens a Python terminal pane at the bottom of the interface.
 
     > **Tip**: If the *Python: Create Terminal* command is not listed, refresh the browser to reload the environment and try again.
 
-8. In the terminal pane, enter the following command to change to the directory where the Python 3.5.3 virtual environment is defined:
+7. In the terminal pane, enter the following command to change to the directory where the Python 3.5.3 virtual environment is defined:
 
     ````bash
     cd /usr/bin
     ````
 
-9. Now install the Azure Machine Learning SDK (with the optional *notebooks* extra package) using this command:
+8. Now install the Azure Machine Learning SDK (with the optional *notebooks* extra package) using this command:
 
     ```bash
     sudo pip install azureml-sdk[notebooks]
     ```
 
-10. Close the Terminal pane.
+9. Close the Terminal pane.
 
 ## Task 3: Use the Azure ML SDK in Visual Studio Codespaces
 
