@@ -37,11 +37,11 @@ You can perform most asset management tasks to set up your environment in the *S
 
 ## Task 2: Set Up a Visual Studio Codespace
 
-Compute instances in Azure Machine Learning provide an easy to manage Python environment for working with Azure ML without the need to manage your own Python installation. However, sometimes you may want to use your own graphical Python development environment. In this course, we'll use Visual Studio Codespaces to simplify installation, but the principles of using the Azure Machine Learning SDK are the same in any Python environment.
+Compute instances in Azure Machine Learning provide an easy to manage Python environment for working with Azure ML without the need to manage your own Python installation. However, sometimes you may want to use your own graphical Python development environment. In this course, we'll use a Visual Studio Codespace to simplify installation, but the principles of using the Azure Machine Learning SDK are the same in any Python environment.
 
 > **Note**: Visual Studio Codespaces is in *preview* at the time of writing. You may experience some unexpected error messages.
 
-1. In a new browser tab, navigate to [https://online.visualstudio.com](https://online.visualstudio.com), and sign into Visual Studio Codespaces using the same Microsoft credentials you used to sign into Azure.
+1. In a new browser tab, navigate to [https://online.visualstudio.com](https://online.visualstudio.com). If prompted, sign into Visual Studio Codespaces using the same Microsoft credentials you used to sign into Azure.
 2. Create a codespace with the following settings (if you don't already have a Visual Studio Codespaces plan, create one when prompted - this is used to track resource utilization by your codespaces):
     - **Codespace Name**: *A unique name of your choice*
     - **Git Repository**: MicrosoftLearning/DP100
@@ -49,31 +49,22 @@ Compute instances in Azure Machine Learning provide an easy to manage Python env
     - **suspend idle Codespace after**: 60 Minutes
 3.  Wait for the codespace to be created. This will open a browser-based instance of Visual Studio Code.
 4. Wait for a minute or so while the environment is set up for you. It might look like nothing is happening, but in the background we are installing some extensions that you will use in the labs. You'll see the following things happen:
+    - A script pane will open to show setup status.
     - The files in this repo will appear in the pane on the left.
-    - After several minutes, a new file named **REFRESH NOW** will appear in the pane on the left. This is your indication that everything has been installed.
-5. After the **REFRESH NOW** file has appeared, refresh the web page to ensure all of the extensions are loaded and you're ready to start.
+5. After the script has completed, you can close the script pane.
 
     A Visual Studio Codespace is a hosted instance of Visual Studio Code that you can use in a web browser. Visual Studio Code is a general code editing environment, with support for various programming languages through the installation of *extensions*. To work with Python, you'll need the Microsoft Python extension, which was installed for you along with some commonly used Python packages when you created this environment from the **DP100** repo.
 
-    The hosted Visual Studio Code environment includes three installations of Python (versions 2.7.13, 3.5.3, and 3.8.0). You will use the Python **3.5.3** virtual environment. In your own installation, you are responsible for installing Python, creating virtual environments, and installing the packages you need. In this lab, most of the general Python configuration has been done for you, but you need to install the Azure Machine Learning SDK.
+    The codespace includes an installation of Python (version 3.x), including common packages and support for Jupyter Notebooks within the Visual Studio Code interface. To run code that works with Azure Machine Learning, you just need to install the Azure ML SDK.
 
-6. In the Visual Studio codespace, wait for the contents of the DP100 repo to be loaded, and then in the Application Menu (**&#9776;**), on the **View** menu, click **Command Palette** (or press CTRL+SHIFT+P). Then in the Palette, enter the command **Python: Create Terminal**. This opens a Python terminal pane at the bottom of the interface.
-
-    > **Tip**: If the *Python: Create Terminal* command is not listed, refresh the browser to reload the environment and try again.
-
-7. In the terminal pane, enter the following command to change to the directory where the Python 3.5.3 virtual environment is defined:
-
-    ````bash
-    cd /usr/bin
-    ````
-
-8. Now install the Azure Machine Learning SDK (with the optional *notebooks* extra package) using this command:
+6. In the Visual Studio codespace, in the Application Menu (**&#9776;**), on the **View** menu, click **Command Palette** (or press CTRL+SHIFT+P). Then in the Palette, enter the command **Python: Create Terminal**. This opens a Python terminal pane at the bottom of the interface.
+7. In the terminal pane, enter the following command to install the Azure Machine Learning SDK (with the optional *notebooks* extra package) using this command:
 
     ```bash
-    sudo pip install azureml-sdk[notebooks]
+    pip install azureml-sdk[notebooks]
     ```
 
-9. Close the Terminal pane.
+8. Close the Terminal pane.
 
 ## Task 3: Use the Azure ML SDK in Visual Studio Codespaces
 
@@ -81,12 +72,10 @@ Now that you have a Python development environment, you can use the Azure Machin
 
 1. In a new browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com), signing in if necessary.
 2. Open the Azure Machine Learning workspace resource you created in the previous lab, and on its **Overview** page, click **Download config.json** and download the file to your local computer.
-3. Open the downloaded **config.json** file in a text editor, and copy it's contents to the clipboard. This file contains the configuration information necessary to connect to your workspace.
-4. In Visual Studio Online, create a new file named **config.json** in the root folder of your codespace.
-5. Paste the copied configuration information into the new config.json file in your codespace, and save it.
-6. In your codespace, open the **01B - Intro to the Azure ML SDK.ipynb** notebook - this will be loaded in the Jupyter Notebook interface. It may take a while to load the first time the Jupyter Notebooks interface is used, and you may briefly see two panes - one containing the JSON representation of the notebook, and the other containing the notebook visual interface.
-7. When the notebook has loaded, at the bottom left of the codespace, click the current Python virtual environment. This should have changed to **Python 3.5.3** based on the configuration settings in the repo, but select that virtual environment again anyway (the notebook was authored in a different version, which is indicated in its metadata).
-8. Read the notes in the notebook, running each code cell in turn, just as you did in the Azure Machine Learning Notebook VM Jupyter environment.
+3. From your local computer, drag the downloaded **config.json** file into the Codespace in your browser, and drop it on the notebook files there. This uploads the config file and opens it in the Codespace editor.
+4. Review the contents of the config.json file, and then close it.
+5. In your codespace, open the **01B - Intro to the Azure ML SDK.ipynb** notebook - this will be loaded in the Jupyter Notebook interface. It may take a while to load the first time the Jupyter Notebooks interface is used, and you may briefly see two panes - one containing the JSON representation of the notebook, and the other containing the notebook visual interface.
+6. When the notebook has loaded, read the notes it contains and run each code cell in turn, just as you did in the Azure Machine Learning Notebook VM Jupyter environment.
 
 ## Task 4: Use the Visual Studio Code Azure Machine Learning Extension
 
@@ -94,5 +83,5 @@ If you plan to work with Azure Machine Learning in a Visual Studio codespace (or
 
 1. In the Visual Studio codespace interface, click the **Extensions** tab (&#8862;), and search for "Azure Machine Learning". Then install the **Azure Machine Learning** extension from Microsoft. After the extension has installed, click the **Reload Required** button to reload the environment with the extension.
 2. In the Visual Studio codespace interface, click the **Azure** tab (***&Delta;***) and in the **Azure Machine Learning** section, expand your subscription and your Azure Machine Learning workspace.
-3. Expand **Compute** and verify that the **aml-cluster** compute resource you created in your workspace is listed along with a **local** compute resource, which in this case represents the hosted codepace environment - you can run Azure Machine Learning code experiments on local compute as well as on compute resources defined in the workspace.
+3. Expand **Compute Clusters** and verify that the **aml-cluster** compute resource you created in your workspace is listed along with a **local** compute resource, which in this case represents the hosted codepace environment - you can run Azure Machine Learning code experiments on local compute as well as on compute resources defined in the workspace.
 4. Close the Visual Studio codespace browser tab.
