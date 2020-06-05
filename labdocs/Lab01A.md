@@ -45,7 +45,7 @@ One of the benefits of Azure Machine Learning is the ability to create cloud-bas
     - **Virtual Machine type**: CPU
     - **Virtual Machine size**: Standard_DS1_v2
 3. While the compute instance is being created, switch to the **Compute Clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
-    - **Compute name**: aml-cluster
+    - **Compute name**: *enter a unique name*
     - **Virtual Machine type**: CPU
     - **Virtual Machine priority**: Dedicated
     - **Virtual Machine size**: Standard_DS2_v2

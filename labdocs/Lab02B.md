@@ -21,7 +21,7 @@ In this lab, you will publish an inference pipeline as a containerized service i
 2. In the **Compute Instances** tab, if your compute instance is not already running, start it - you will use it later in this lab.
 
 3. On the **Inference Clusters** tab, add a new cluster with the following settings:
-    * **Compute name**: aks-cluster
+    * **Compute name**: *enter a unique name*
     * **Kubernetes Service**: Create new
     * **Region**: *A region <u>other than the one where your workspace is provisioned</u>*
     * **Virtual Machine size**: Standard_DS2_v2 (*Use the filter to find this in the list*)
@@ -77,9 +77,9 @@ While the inference compute is being provisioned, you can prepare the inference 
 
 Now you have an inference pipeline for real-time inferencing, which you can publish as a web service for client applications to use.
 
-1. Return to the **Compute** page and on the **Inference Compute** tab, refresh the view and verify that your **aks-cluster** compute has been created. If not, wait for your inference cluster to be created. This may take quite a bit of time.
+1. Return to the **Compute** page and on the **Inference Compute** tab, refresh the view and verify that your inference cluster has been created. If not, wait for it to be created. This may take quite a bit of time.
 2. Switch back to the **Designer** tab and reopen your **Predict Diabetes** inference pipeline. If it has not yet finished running, await it's completion. Then visualize the **Result dataset** output of the **Execute Python Script** module to see the predicted labels and probabilities for the three patient observations in the input data.
-3. At the top right, click **Deploy**, and set up a new real-time endpoint named **predict-diabetes** on the **aks-cluster** compute target you created.
+3. At the top right, click **Deploy**, and set up a new real-time endpoint named **predict-diabetes** on the inference cluster you created.
 4. Wait for the web service to be deployed - this can take several minutes. The deployment status is shown at the top left of the designer interface.
 
     > **Tip**: While you're waiting for your service to be deployed, why not spend some time reviewing the Azure Machine Learning Designer documentation at [https://docs.microsoft.com/azure/machine-learning/service/concept-designer](https://docs.microsoft.com/azure/machine-learning/service/concept-designer)?
@@ -101,6 +101,6 @@ Now you can test your deployed service from a client application - in this case,
 The web service is hosted in a Kubernetes cluster. If you don't intend to experiment with it further, you should delete the endpoint and the cluster to avoid accruing unnecessary Azure charges. You should also stop other compute resources until you need them again.
 
 1. In [Azure Machine Learning studio](https://ml.azure.com), on the **Endpoints** tab, select the **predict-diabetes** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the endpoint.
-2. On the **Compute** page, on the **Inference clusters** tab, select the select the **aks-cluster** endpoint. Then click the **Delete** (&#128465;) button and confirm that you want to delete the compute target.
-3. On the **Compute** page, on the **Compute clusters** tab, edit the **aml-cluster** and reset the **minimum number of nodes** to 0.
+2. On the **Compute** page, on the **Inference clusters** tab, select the select your inference cluster. Then click the **Delete** (&#128465;) button and confirm that you want to delete the compute target.
+3. On the **Compute** page, on the **Compute clusters** tab, edit your compute cluster and reset the **minimum number of nodes** to 0.
 4. If you're finished working with Azure Machine Learning for the day, on the **Compute Instances** tab, select your compute instance and click **Stop** to shut it down. Otherwise, leave it running for the next lab.
