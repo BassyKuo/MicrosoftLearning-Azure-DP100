@@ -20,7 +20,7 @@ To get started with Designer, first you must create a pipeline and add the datas
 1. In [Azure Machine Learning studio](https://ml.azure.com) for your workspace, view the **Designer** page and create a new pipeline.
 2. In the **Settings** pane, change the default pipeline name (**Pipeline-Created-on-*date***) to **Visual Diabetes Training** (if the **Settings** pane is not visible, click the **&#9881;** icon next to the pipeline name at the top).
 3. Note that you need to specify a compute target on which to run the pipeline. In the **Settings** pane, click **Select compute target** and select your compute cluster.
-4. On the left side of the designer, expand the **Datasets** section, and drag the **diabetes dataset** dataset you created in the previous exercise onto the canvas.
+4. On the left side of the designer, select the **Datasets** (&#8981;) tab, expand the **Datasets** section, and drag the **diabetes dataset** dataset you created in the previous exercise onto the canvas.
 5. Select the **diabetes dataset** module on the canvas, and view its settings (the settings pane for the dataset may open automatically and cover the canvas). Then on the **outputs** tab, click the **Visualize** icon (which looks like a column chart).
 6. Review the schema of the data, noting that you can see the distributions of the various columns as histograms. Then close the visualization, and then close or minimize the settings pane using the X or **<sub>&#8599;</sub><sup>&#8601;</sup>** icon so you can see the pipeline canvas with the dataset on it.
 
@@ -28,8 +28,9 @@ To get started with Designer, first you must create a pipeline and add the datas
 
 Before you can train a model, you typically need to apply some preprocessing transformations to the data.
 
-1. In the pane on the left, expand the **Data Transformation** section, which contains a wide range of modules you can use to transform data and pre-process it before model training. Drag a **Normalize Data** module to the canvas, below the **diabetes dataset** module. Then connect the output from the **diabetes dataset** module to the input of the **Normalize Data** module.
-2. Select the **Normalize Data** module and view its settings, noting that it requires you to specify the transformation method and the columns to be transformed. Then, leaving the transformation as **ZScore**, edit the columns to includes the following column names:
+1. In the pane on the left, view the **Modules** (&#8862;) tab and expand the **Data Transformation** section, which contains a wide range of modules you can use to transform data before model training.
+2. Drag a **Normalize Data** module to the canvas, below the **diabetes dataset** module. Then connect the output from the **diabetes dataset** module to the input of the **Normalize Data** module.
+3. Select the **Normalize Data** module and view its settings, noting that it requires you to specify the transformation method and the columns to be transformed. Then, leaving the transformation as **ZScore**, edit the columns to includes the following column names:
     * PlasmaGlucose
     * DiastolicBloodPressure
     * TricepsThickness
@@ -39,8 +40,8 @@ Before you can train a model, you typically need to apply some preprocessing tra
 
     **Note**: We're normalizing the numeric columns put them on the same scale, and avoid columns with large values dominating model training. You'd normally apply a whole bunch of pre-processing transformations like this to prepare your data for training, but we'll keep things simple in this exercise.
 
-3. Now we're ready to split the data into separate datasets for training and validation. In the pane on the left, in the **Data Transformations** section, drag a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the *Transformed Dataset* (left) output of the **Normalize Data** module to the input of the **Split Data** module.
-4. Select the **Split Data** module, and configure its settings as follows:
+4. Now we're ready to split the data into separate datasets for training and validation. In the pane on the left, in the **Data Transformations** section, drag a **Split Data** module onto the canvas under the **Normalize Data** module. Then connect the *Transformed Dataset* (left) output of the **Normalize Data** module to the input of the **Split Data** module.
+5. Select the **Split Data** module, and configure its settings as follows:
     * **Splitting mode** Split Rows
     * **Fraction of rows in the first output dataset**: 0.7
     * **Random seed**: 123
@@ -68,7 +69,7 @@ With the data flow steps defined, you're now ready to run the training pipeline 
 
     **Tip**: While it's running, you can view the pipeline and experiment that have been created in the **Pipelines** and **Experiments** pages. Switch back to the **Visual Diabetes Training** pipeline on the **Designer** page when you're done.
 
-3. After the **Normalize Data** module has completed, select it, and in the **Settings** pane, on the **Outputs + Logs** tab, under **Port outputs** in the **Transformed dataset** section, click the **Visualize** icon, and note that you can view statistics and distribution visualizations for the transformed columns.
+3. After the **Normalize Data** module has completed, select it, and in the **Settings** pane, on the **Outputs + logs** tab, under **Port outputs** in the **Transformed dataset** section, click the **Visualize** icon, and note that you can view statistics and distribution visualizations for the transformed columns.
 4. Close the **Normalize Data** visualizations, close or resize the settings pane (click the X or **<sub>&#8599;</sub><sup>&#8601;</sup>** icon), and wait for the rest of the modules to complete. Then visualize the output of the **Evaluate Model** module to see the performance metrics for the model.
 
     **Note**: The performance of this model isn't all that great, partly because we performed only minimal feature engineering and pre-processing. You could try some different classification algorithms and compare the results (you can connect the outputs of the **Split Data** module to multiple **Train Model** and **Score Model** modules, and you can connect a second scored model to the **Evaluate Model** module to see a side-by-side comparison). The point of the exercise is simply to introduce you to the Designer interface, not to train a perfect model!

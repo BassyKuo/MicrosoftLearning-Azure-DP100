@@ -43,7 +43,8 @@ While the inference compute is being provisioned, you can prepare the inference 
 1. On the **Designer** page, open the **Visual Diabetes Training** pipeline you created in the previous lab.
 2. In the **Create inference pipeline** drop-down list, click **Real-time inference pipeline**. After a few seconds, a new version of your pipeline named **Visual Diabetes Training-real time inference** will be opened.
 3. Rename the new pipeline to **Predict Diabetes**, and then review the new pipeline. Note that some of the transformations and training steps have been encapsulated in this pipeline so that the statistics from your training data will be used to normalize any new data values, and the trained model will be used to score the new data.
-4. The inference pipeline assumes that new data will match the schema of the original training data, so the **diabetes dataset** module from the training pipeline is included. However, this input data includes the **Diabetic** label that the model predicts, which is unintuitive to include in new patient data for which a diabetes prediction has not yet been made. Delete this module and replace it with an **Enter Data Manually** module from the **Data Input and Output** section, connected to the same **dataset** input of the **Apply Transformation** module as the **Web Service Input**. Then modify the settings of the **Enter Data Manually** module to use the following CSV input, which includes feature values without labels for three new patient observations:
+4. Note that the inference pipeline assumes that new data will match the schema of the original training data, so the **diabetes dataset** dataset from the training pipeline is included. However, this input data includes the **Diabetic** label that the model predicts, which is unintuitive to include in new patient data for which a diabetes prediction has not yet been made.
+5. Delete this the **diabetes dataset** dataset from the inference pipeline and replace it with an **Enter Data Manually** module from the **Data Input and Output** section of the **Modules** tab; connecting it to the same **dataset** input of the **Apply Transformation** module as the **Web Service Input**. Then modify the settings of the **Enter Data Manually** module to use the following CSV input, which includes feature values without labels for three new patient observations:
 
     ```CSV
     PatientID,Pregnancies,PlasmaGlucose,DiastolicBloodPressure,TricepsThickness,SerumInsulin,BMI,DiabetesPedigree,Age
@@ -52,8 +53,9 @@ While the inference compute is being provisioned, you can prepare the inference 
     1228510,4,115,50,29,243,34.69215364,0.741159926,59
     ```
 
-5. The inference pipeline includes the **Evaluate Model** module, which is not useful when predicting from new data, so delete this module.
-6. The output from the **Score Model** module includes all of the input features as well as the predicted label and probability score. To limit the output to only the prediction and probability, delete the connection between the **Score Model** module and the **Web Service Output**, add an **Execute Python Script** module from the **Python Language** section, connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**. Then modify the settings of the **Execute Python Script** module to use the following code (replacing all existing code):
+6. The inference pipeline includes the **Evaluate Model** module, which is not useful when predicting from new data, so delete this module.
+7. Note that the output from the **Score Model** module includes all of the input features as well as the predicted label and probability score. 
+8. To limit the output to only the prediction and probability, delete the connection between the **Score Model** module and the **Web Service Output**, add an **Execute Python Script** module from the **Python Language** section, connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**. Then modify the settings of the **Execute Python Script** module to use the following code (replacing all existing code):
 
     ```Python
     import pandas as pd
@@ -67,11 +69,11 @@ While the inference compute is being provisioned, you can prepare the inference 
         return scored_results
     ```
 
-7. Verify that your pipeline looks similar to the following:
+9. Verify that your pipeline looks similar to the following:
 
     ![Visual Inference Pipeline](images/visual-inference.jpg)
 
-8. Submit the pipeline as a new experiment named **predict-diabetes** on the compute cluster you used for training. This may take a while!
+10. Submit the pipeline as a new experiment named **predict-diabetes** on the compute cluster you used for training. This may take a while!
 
 ## Task 3: Publish a Web Service
 
