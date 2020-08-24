@@ -1,0 +1,33 @@
+2020-08-09 05:27:12.483 - INFO - 82507 - azureml.train.automl._azureautomlclient._create_parent_run_for_local_managed:539 - Start creating parent run
+2020-08-09 05:27:12.879 - INFO - 82507 - azureml.train.automl._azureautomlclient._create_parent_run_for_local_managed:555 - Setting Run AutoML_a6c63c69-227f-42b6-8f56-bf1ec8d3375e status to: preparing
+2020-08-09 05:27:13.342 - INFO - 82507 - azureml.train.automl.automlconfig._local_managed:164 - Pickling data and settings for local managed.
+2020-08-09 05:27:13.343 - INFO - 82507 - azureml.train.automl._local_managed_utils._handle_data:84 - Pandas present: True. Numpy present: True
+2020-08-09 05:27:13.343 - INFO - 82507 - azureml.train.automl._local_managed_utils._handle_data:88 - Saving Dataset for script run submission.
+2020-08-09 05:27:13.345 - INFO - 82507 - azureml.train.automl._local_managed_utils._handle_data:88 - Saving Dataset for script run submission.
+2020-08-09 05:27:13.453 - INFO - 82507 - azureml.train.automl._local_managed_utils.modify_managed_run_config:122 - Running local managed run on curated environment: AzureML-AutoML version: 29
+2020-08-09 05:27:13.541 - INFO - 82507 - azureml.train.automl.automlconfig._local_managed:179 - Submitting script run for local managed.
+2020-08-09 05:27:18.953 - INFO - 82507 - azureml.train.automl.automlconfig._local_managed:187 - Script run diabetes_automl_1596950833_eb6b0cff submitted for local managed.
+2020-08-09 05:27:19.260 - INFO - 82507 - azureml.train.automl.automlconfig._local_managed:206 - Local managed run returning to user AutoML_a6c63c69-227f-42b6-8f56-bf1ec8d3375e.
+2020-08-09 05:41:51.778 - INFO - 82507 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2020-08-09 05:41:51.791 - INFO - 82507 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2020-08-09 05:41:54.731 - INFO - 82507 - azureml.train.automl.run._log_activity:78 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=2939.37[ms]
+2020-08-09 05:41:54.731 - INFO - 82507 - azureml.train.automl.run._log_activity:55 - ActivityStarted: DownloadModel
+2020-08-09 05:42:16.301 - INFO - 82507 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Feature sweeping enabled: False
+2020-08-09 05:42:16.304 - INFO - 82507 - azureml.automl.runtime.featurization.data_transformer._logger_wrapper:81 - Feature sweeping timeout: 86400
+2020-08-09 05:42:16.502 - INFO - 82507 - azureml.train.automl.run._log_activity:78 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=21770.96[ms]
+2020-08-09 05:42:16.503 - INFO - 82507 - azureml.train.automl.run._log_activity:78 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=24724.33[ms]
+2020-08-09 05:45:22.683 - INFO - 88488 - azureml.train.automl._azureautomlclient._create_parent_run_for_local_managed:539 - Start creating parent run
+2020-08-09 05:45:23.573 - INFO - 88488 - azureml.train.automl._azureautomlclient._create_parent_run_for_local_managed:555 - Setting Run AutoML_05fc0797-e297-4be6-8901-0f6fffb4b933 status to: preparing
+2020-08-09 05:45:24.024 - INFO - 88488 - azureml.train.automl.automlconfig._local_managed:164 - Pickling data and settings for local managed.
+2020-08-09 05:45:24.024 - INFO - 88488 - azureml.train.automl._local_managed_utils._handle_data:84 - Pandas present: True. Numpy present: True
+2020-08-09 05:45:24.025 - INFO - 88488 - azureml.train.automl._local_managed_utils._handle_data:88 - Saving Dataset for script run submission.
+2020-08-09 05:45:24.091 - INFO - 88488 - azureml.train.automl._local_managed_utils.modify_managed_run_config:122 - Running local managed run on curated environment: AzureML-AutoML version: 29
+2020-08-09 05:45:24.174 - INFO - 88488 - azureml.train.automl.automlconfig._local_managed:179 - Submitting script run for local managed.
+2020-08-09 05:45:28.652 - INFO - 88488 - azureml.train.automl.automlconfig._local_managed:187 - Script run diabetes_automl_1596951924_f6aff81d submitted for local managed.
+2020-08-09 05:45:28.867 - INFO - 88488 - azureml.train.automl.automlconfig._local_managed:206 - Local managed run returning to user AutoML_05fc0797-e297-4be6-8901-0f6fffb4b933.
+2020-08-09 05:46:51.109 - INFO - 88488 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2020-08-09 05:46:51.112 - INFO - 88488 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2020-08-09 05:46:52.686 - INFO - 88488 - azureml.train.automl.run._log_activity:78 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=1573.51[ms]
+2020-08-09 05:46:52.686 - INFO - 88488 - azureml.train.automl.run._log_activity:55 - ActivityStarted: DownloadModel
+2020-08-09 05:46:53.025 - INFO - 88488 - azureml.train.automl.run._log_activity:78 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=338.37[ms]
+2020-08-09 05:46:53.025 - INFO - 88488 - azureml.train.automl.run._log_activity:78 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1916.37[ms]
